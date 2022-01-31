@@ -1,0 +1,4 @@
+discord
+autopep8
+youtube-dl
+PyNaCl
