@@ -5,10 +5,10 @@ if [ -d ./venv ]; then
 fi
 
 echo "$ generating venv"
-sudo python3.9 -m venv ./venv
-sudo ./venv/bin/python3.9 -m pip install --upgrade pip
+sudo python3.8 -m venv ./venv
+sudo ./venv/bin/python3.8 -m pip install --upgrade pip
 
 source ./venv/bin/activate
 
 echo "$ installing deps"
-sudo ./venv/bin/python3.9 -m pip install -r ./misc/requirements.txt
+sudo ./venv/bin/python3.8 -m pip install -r ./misc/requirements.txt

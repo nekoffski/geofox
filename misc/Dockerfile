@@ -11,3 +11,5 @@ COPY . /usr/local/geofox
 
 RUN yes | ./bin/deps.sh
 RUN yes | ./bin/venv.sh
+
+CMD ["./bin/spawn.sh"]
