@@ -7,7 +7,7 @@ def main():
     token = os.getenv("GEOFOX_TOKEN")
 
     if token is None:
-        raise RuntimeError("geofox-token venv is not specified")
+        raise RuntimeError("GEOFOX_TOKEN venv is not specified")
 
     client = commands.Bot(command_prefix="*")
     client.remove_command("help")

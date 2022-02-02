@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Docker Buildx      
+      uses: crazy-max/ghaction-docker-buildx@v1      
+      with:        
+        version: latest
+    - name: Create docker container 
+      run: |
+        docker login --username ${{ secrets.DOCKER_AUTH_LOGIN }} --password ${{ secrets.DOCKER_AUTH_TOKEN }}
+        docker buildx build --platform linux/arm/v7 --tag sparklesh/geofox:latest \
+        --output type=image,push=true --file ./misc/Dockerfile .

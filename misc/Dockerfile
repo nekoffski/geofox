@@ -6,10 +6,8 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 RUN apt-get update
 
-WORKDIR /usr/local/sparkle-connector
-COPY . /usr/local/sparkle-connector
+WORKDIR /usr/local/geofox
+COPY . /usr/local/geofox
 
 RUN yes | ./bin/deps.sh
 RUN yes | ./bin/venv.sh
-
-EXPOSE 7776
