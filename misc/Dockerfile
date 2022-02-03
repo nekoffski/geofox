@@ -1,10 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \ 
-    software-properties-common sudo tmux vim wget curl lsof psmisc
-RUN add-apt-repository ppa:deadsnakes/ppa
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
-RUN apt-get update
+    software-properties-common sudo tmux vim wget curl lsof psmisc tzdat
 
 WORKDIR /usr/local/geofox
 COPY . /usr/local/geofox
