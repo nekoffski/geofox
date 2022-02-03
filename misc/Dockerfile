@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \ 
-    software-properties-common sudo tmux vim wget curl lsof psmisc tzdat
+    software-properties-common sudo tmux vim wget curl lsof psmisc
 
 WORKDIR /usr/local/geofox
 COPY . /usr/local/geofox
